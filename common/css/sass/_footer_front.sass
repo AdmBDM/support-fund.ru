@@ -1,0 +1,122 @@
+footer
+	position: relative
+	width: 100%
+	background-color: $clr_footer_bck
+	background-image: url(/images/footer-info.jpg)
+	background-size: cover
+	background-repeat: no-repeat
+	background-attachment: scroll
+
+	.footer-info
+		width: 100%
+		margin: 0 auto $height_header_nav
+
+	.footer-items
+		position: relative
+		display: flex
+		width: 100%
+		flex-direction: row
+		align-items: stretch
+		justify-content: center
+		flex-wrap: wrap
+		//margin-bottom: 30px
+		padding: $height_header_nav 0
+
+		.footer-item
+			width: 25%
+
+			.footer-item-block
+				padding-left: 20px
+				padding-right: 30px
+
+				.footer-item-img
+					display: block
+					width: 25px
+					float: left
+					margin-right: 10px
+
+					img
+						width: 100%
+						vertical-align: middle
+						border-style: none
+
+				.footer-item-text
+					float: left
+					display: block
+
+					.footer-text-header
+						font-weight: 400
+						text-transform: uppercase
+						text-align: left
+						font-size: $footer_font_head
+						padding-top: 15px
+						color: $clr_white
+
+					.footer-text-row-block
+						padding-top: 10px
+
+						.row-block-img
+							display: block
+							width: 25px
+							float: left
+							margin-right: 10px
+
+							img
+								width: 100%
+								filter: brightness(150%)
+
+						.row-block-txt
+							display: flex
+							font-size: $footer_font_row
+							color: $clr_white
+
+			.footer-logo
+				max-width: 180px
+				margin-bottom: 15px
+
+
+.footer-copyright
+	position: relative
+	margin: 0 20px
+	height: $height_footer
+	display: flex
+	flex-direction: column
+	align-items: center
+	justify-content: center
+
+	span, a
+		color: $clr_white
+
+
+footer:before
+	background-size: cover
+	background-color: $clr_120_op95
+	//background-repeat: repeat
+	//background-attachment: scroll
+	height: 100%
+	width: 100%
+	z-index: 0
+	position: absolute
+	top: 0
+	left: 0
+	content: ""
+
+//#btn-menu-f-main,
+//#btn-menu-f-open_data,
+//#btn-menu-f-news,
+//#btn-menu-f-contact
+	//text-transform: uppercase
+	//font-size: 14px
+	//font-weight: bold
+	//padding: 20px
+	//color: #002e5b
+
+#btn-menu-f-main:hover,
+#btn-menu-f-open_data:hover,
+#btn-menu-f-news:hover,
+#btn-menu-f-contact:hover,
+#btn-menu-f-feedback:hover
+	text-transform: uppercase
+	color: $btn_hover_fnt
+	text-decoration: none
+	cursor: pointer

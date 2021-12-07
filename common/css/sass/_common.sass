@@ -1,0 +1,86 @@
+*
+	font-family: Rubik, Roboto, "Poppins",  Arial, Helvetica, sans-serif
+	font-size: 1rem
+	font-weight: 400
+	//line-height: 1.5
+	color: #212529
+	text-align: left
+
+
+.site-index
+	width: 100%
+
+	.title_img
+		position: relative
+		background-repeat: no-repeat
+		background-size: auto 100%
+		margin: 0 auto
+		z-index: -1
+
+
+.content
+	max-width: $width_content
+	margin-left: auto
+	margin-right: auto
+
+
+.btn-main
+	background-color: $btn_clr
+	border: 1px solid $btn_clr
+	color: $btn_font_clr !important
+	text-transform: uppercase
+	font-size: 16px
+	font-weight: 600
+	border-radius: $btn_radius
+	padding: 0 30px !important
+	line-height: 40px
+	text-align: center
+
+
+.btn-main:hover
+	background-color: $btn_hover_clr
+	text-decoration: none
+	color: $btn_hover_fnt !important
+
+
+.table
+	width: 100%
+
+
+table
+	width: 100%
+	border-collapse: collapse
+
+	caption
+		color: $clr_about_black
+		caption-side: top
+		text-align: center
+		font-size: 28px
+		margin-bottom: 10px
+		font-weight: 700
+
+	tr
+		border-bottom: 1px solid lightgrey
+
+	th
+		text-align: center
+
+	th:nth-last-child(2), th:nth-last-child(1)
+		padding: 15px
+		font-weight: bolder
+
+	td
+		font-size: 14px
+		padding: 15px 10px
+
+		a
+			font-size: 14px
+			color: $clr_tab_link
+
+		a:hover
+			text-decoration: none
+
+
+	td:nth-last-child(2), td:nth-last-child(1)
+		text-align: center
+		text-justify: distribute-center-last

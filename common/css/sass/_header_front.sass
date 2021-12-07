@@ -1,0 +1,168 @@
+.up-row
+	width: 100%
+
+.up-row-columns
+	margin: 0 auto
+	padding: 5px 15px 0
+	display: flex
+	flex-direction: row
+	align-content: center
+	align-items: center
+	justify-content: space-between
+
+	.up-row-col
+		width: 30%
+
+	.up-block-email
+		display: flex
+		flex-direction: row
+		align-items: center
+
+		.email-img
+			width: 20%
+			display: flex
+			justify-content: center
+
+		figure
+			margin: 0
+
+		.email-img figure
+			align-self: center
+
+		.email-txt
+			display: block
+			width: 80%
+
+
+	.up-block-logo
+		display: flex
+		flex-direction: row
+		align-items: center
+		justify-content: center
+
+		img
+			vertical-align: middle
+			border-style: none
+
+		.logo
+			width: $width_logo
+
+
+	.up-block-btn
+		text-align: right
+
+//.block-row
+//	width: 100%
+//	height: $height_header_info
+//
+//
+//.block-row .block-div
+//	max-width: 100%
+//	margin: 0 auto
+//
+//
+//.block-div
+//	display: flex
+//	flex-wrap: nowrap
+//	flex-direction: column
+//	align-items: flex-start
+//
+//
+//.block-div-info
+//	padding: 10px 0
+//
+//.block-some-columns
+//	display: flex
+//	width: 100%
+//	flex-direction: row
+//	align-items: stretch
+//	justify-content: space-around
+//	flex-wrap: wrap
+//
+//
+//.block-single-column
+//	width: 30%
+//	display: flex
+//	flex-direction: row
+//	align-items: center
+//
+//
+//.block-div .content
+//	display: flex
+//	flex-direction: row
+//	align-items: center
+//
+//	img
+//		vertical-align: middle
+//		border-style: none
+//
+//	.logo
+//		width: $width_logo
+//
+//
+//.block-div .info-text
+//	display: flex
+//	flex-direction: column
+//	padding-left: 20px
+//
+//
+//.info-text-block
+//	display: block
+//	color: #303030
+//	font-size: 14px
+//	font-weight: 600
+//
+//	span
+//		display: inline-block
+//		text-decoration: inherit
+
+
+#btn-menu-main,
+#btn-menu-open_data,
+#btn-menu-news,
+#btn-menu-contact,
+#btn-menu-feedback
+	text-transform: uppercase
+	font-size: 14px
+	font-weight: bold
+	padding: 20px
+	color: #002e5b
+
+
+#btn-menu-main:hover,
+#btn-menu-open_data:hover,
+#btn-menu-news:hover,
+#btn-menu-contact:hover,
+#btn-menu-feedback:hover
+	color: $btn_clr
+	text-decoration: none
+	cursor: pointer
+
+
+#ukp-nav
+	height: $height_header_nav
+	z-index: 999
+
+	ul
+		margin: 0 auto
+	li
+		margin: 0 10px
+		a
+			text-transform: uppercase
+			font-size: 14px
+			font-weight: bold
+			padding: 20px
+			color: #002e5b
+
+		a:hover
+			color: $btn_clr
+			text-decoration: none
+			cursor: pointer
+
+	.navbar-collapse.show
+		background-color: $clr_237_op95
+
+#ukp-nav.fixed
+	position: fixed
+	top: 0
+	width: 100%
