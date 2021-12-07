@@ -12,6 +12,7 @@ use yii\bootstrap4\Html;
 use yii\web\View;
 
 AppAsset::register($this);
+Yii::$app->name = 'Фонд УЦК «Фонд поддержки»';
 ?>
 <?php $this->beginPage() ?>
 <!DOCTYPE html>

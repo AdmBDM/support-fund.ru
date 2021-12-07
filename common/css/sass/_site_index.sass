@@ -1,0 +1,400 @@
+.site-index
+	.owl-carousel
+		.item
+			height: 500px
+			position: relative
+			text-align: center
+			color: white
+
+		.item-text-centered
+			position: absolute
+			top: 50%
+			left: 50%
+			transform: translate(-50%, -50%)
+
+		.item-text-half_left
+			position: absolute
+			top: 50%
+			left: 40%
+			transform: translate(-50%, -50%)
+
+		.slide-1
+			width: 65%
+
+			h2
+				color: $btn_clr
+				font-size: 42px
+				font-weight: bold
+				text-align: center
+
+			h3
+				color: $clr_red
+				font-size: 20px
+				margin-bottom: 13px
+				font-weight: 400
+				text-align: center
+
+		.slide-2
+
+			h1
+				color: $btn_clr
+				font-size: 60px
+				font-weight: bold
+				text-align: center
+
+			h3
+				color: $clr_white
+				font-size: 20px
+				font-weight: 400
+				text-align: center
+			a
+				margin-left: 100px
+				margin-top: 15px
+				font-size: 21px
+				background-color: transparent
+				border: 1px solid $btn_clr
+				color: $btn_clr
+				border-radius: $btn_radius
+				display: inline-block
+				text-align: center
+				text-decoration: none
+				padding: 5px 30px
+
+	.owl-dots
+		position: absolute
+		width: 100%
+		height: 0
+		top: 90%
+		z-index: 999
+		//display: -webkit-flex
+		//display: -moz-flex
+		//display: -ms-flex
+		//display: -o-flex\
+		display: flex
+		justify-content: center
+
+
+.site-about
+	margin: 70px auto 30px
+
+	.about-block
+		position: relative
+		display: flex
+		width: 100%
+		flex-direction: row
+		justify-content: center
+		align-items: stretch
+		flex-wrap: wrap
+
+		.about-block-item
+			width: 50%
+
+			.about-img > img
+				width: 100%
+
+			.about-text-items
+				position: relative
+				display: flex
+				width: 100%
+				flex-direction: row
+				align-items: stretch
+				justify-content: center
+				flex-wrap: wrap
+
+				.about-text-header
+					display: inline-block
+					width: 100%
+					padding: 0 20px 20px
+					color: $clr_about_black
+					font-weight: 600
+					font-size: 2.5rem
+					line-height: 1.2
+					text-align: center
+
+				.about-text-item
+					width: 50%
+					padding: 0 20px
+
+					.info-item
+						display: flex
+						flex-wrap: nowrap
+
+						.service-img
+							margin: 0
+							padding: 0
+							min-width: $icon_radius
+							height: $icon_radius
+							display: flex
+							flex-direction: column
+							align-items: flex-start
+
+							.service-img-round
+								width: 100%
+								height: 100%
+								border-radius: 50%
+								border: 1px solid $clr_icon_border
+
+						.service-img img
+							text-align: center
+							margin-left: 10px
+							margin-top: 10px
+
+						.service-txt
+							padding-left: 15px
+							margin-bottom: 10px
+
+							.service-header
+								display: block
+								color: $btn_clr
+								margin-bottom: 12px
+								font-weight: 400
+								line-height: 1
+								font-size: 1.5rem
+
+							.service-text
+								font-size: 16px
+								color: #606060
+								margin-bottom: 1rem
+
+
+.site-info
+	margin: 0 auto 70px
+
+	h2
+		color: $clr_about_black
+		font-size: 28px
+		margin-bottom: 19px
+		font-weight: 700
+		text-align: center
+
+	table
+		thead tr
+			border-top: 1px solid lightgrey
+			border-bottom: 3px solid lightgrey
+
+		.table-col1
+			width: 25%
+
+		.table-col2
+			width: 45%
+
+		.table-col3
+			width: 15%
+
+		.table-col4
+			width: 15%
+
+		td:first-child
+			font-weight: bolder
+
+
+.site-license
+	margin: 10px auto 70px
+
+	h2
+		color: $clr_about_black
+		font-size: 28px
+		font-weight: bold
+		margin-bottom: 20px
+		text-align: center
+
+	p
+		margin: 10px auto 17px
+		padding: 0 50px
+		text-align: center
+
+	.images-block
+		display: flex
+		flex-wrap: wrap
+		align-items: flex-start
+
+		.images-item
+			display: inline-flex
+
+			img
+				width: 100%
+
+
+.site-open_data
+	margin-top: $height_header_nav
+
+	&-logo
+		&-img
+			img
+				width: 100%
+
+		&-block
+			display: block
+			background-color: #f5f7f9
+			//float: right
+			//margin-left: -241px
+			//margin-top: 19px
+			//overflow: hidden
+			//position: relative
+			z-index: 9
+			width: 35%
+			height: 17%
+			//background-position: 0 0
+			//box-shadow: -3px 0px 7px rgb(3 3 3 / 44%)
+			box-shadow: -3px 0px 7px lightgrey
+
+	.table-data
+		margin: 30px auto 50px
+
+	table
+		caption
+			color: $btn_clr
+			text-align: left
+
+		.table-col1
+			width: 70%
+
+		.table-col2
+			width: 15%
+
+		.table-col3
+			width: 15%
+
+		th:first-child
+			font-weight: bolder
+			text-align: left
+
+
+.site-news
+	//margin-top: $height_header_nav
+	margin-bottom: $height_header_nav
+
+	.logo-news
+		margin: 0
+		width: 100%
+
+	.content
+		h2
+			display: block
+			margin-top: $height_header_nav
+			//margin-bottom: $height_header_nav
+			text-align: center
+			color: $btn_clr
+
+	.news-year
+		.news-year-content
+			margin-top: 20px
+			margin-bottom: 20px
+
+			.year-val
+				font-weight: bolder
+				margin-bottom: 20px
+
+			.news-content
+				margin-left: 15px
+
+				.news-item
+					&-caption
+						text-decoration: underline
+						margin-bottom: 5px
+
+					&-date
+						font-weight: bolder
+					&-anons
+						font-weight: bolder
+
+					&-text
+						margin-left: 15px
+						margin-bottom: 20px
+
+
+.site-contact
+	.go-to-admin
+		text-align: center
+		a
+			font-weight: bold
+			text-transform: uppercase
+			text-decoration: none
+			font-size: 14px
+			color: $btn_clr
+
+
+	.content
+		.map-yandex
+			margin: $height_header_nav auto
+			width: 100%
+			height: 400px
+
+
+		.contact-info
+			width: 100%
+			margin: 0 auto $height_header_nav
+
+			.contact-items
+				display: flex
+				width: 100%
+				flex-direction: row
+				align-items: stretch
+				justify-content: center
+				flex-wrap: wrap
+
+				.contact-item
+					width: 33.3%
+
+					.contact-item-block
+						padding-right: 50px
+
+						.contact-item-img
+							display: block
+							width: 25px
+							float: left
+							margin-right: 10px
+
+							img
+								width: 100%
+								vertical-align: middle
+								border-style: none
+
+						.contact-item-text
+							float: left
+							display: block
+
+							.contact-text-row
+								font-size: 17px
+
+
+		.form-feedback
+			width: 100%
+			padding-top: $height_header_nav
+
+			.feedback-items
+				display: flex
+				width: 100%
+				flex-direction: row
+				align-items: stretch
+				justify-content: center
+				flex-wrap: wrap
+
+				margin-top: $height_header_nav
+				min-height: 200px
+
+				.feedback-form
+					width: 75%
+
+				.feedback-info
+					//background-image: linear-gradient(rgba(242,113,111,0.93), rgba(242,113,111,0.93)), url(/images/feedback-img.jpg)
+					background-image: linear-gradient(rgba(242,113,111,0.95), rgba(242,113,111,0.7)), url(/images/feedback-img.jpg)
+					width: 25%
+					align-items: center
+					text-align: center
+					justify-content: center
+					max-height: 250px
+
+					.feedback-info-block
+						padding: 70px 35px
+
+						h4, p
+							text-align: center
+
+						.feedback-info-headline
+							color: $clr_white
+							font-size: 18px
+
+						.feedback-info-text
+							color: $clr_224
+							font-size: 12px

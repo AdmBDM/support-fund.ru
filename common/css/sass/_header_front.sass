@@ -1,13 +1,9 @@
 .up-row
 	width: 100%
-	height: $height_header_info
-	background: lightgrey
 
 .up-row-columns
 	margin: 0 auto
-	padding: 0 15px
-	//height: fit-content
-	background: lightgrey
+	padding: 5px 15px 0
 	display: flex
 	flex-direction: row
 	align-content: center
@@ -39,12 +35,21 @@
 
 
 	.up-block-logo
-		text-align: center
-		background: yellow
+		display: flex
+		flex-direction: row
+		align-items: center
+		justify-content: center
+
+		img
+			vertical-align: middle
+			border-style: none
+
+		.logo
+			width: $width_logo
+
 
 	.up-block-btn
 		text-align: right
-		background: red
 
 //.block-row
 //	width: 100%
