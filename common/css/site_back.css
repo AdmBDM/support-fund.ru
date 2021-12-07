@@ -1,3 +1,17 @@
+body, .form-control {
+  font-size: 14px !important;
+}
 
+.input-group-addon {
+  width: 30px;
+  padding: 6px 7px;
+}
+
+tbody > tr > td:first-child a {
+  margin-right: 7px;
+}
+tbody > tr > td:first-child a:nth-last-child(1) {
+  color: #c62329;
+}
 
 /*# sourceMappingURL=site_back.css.map */

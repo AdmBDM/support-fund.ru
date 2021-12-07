@@ -16,7 +16,7 @@ use yii\web\View;
 				<div class="footer-item-block">
 					<div class="footer-item-text">
 						<div class="footer-text-header">
-							<a href="/index.php">
+							<a href="/">
 								<img class="footer-logo" alt="" src="/images/footer-logo.png">
 							</a>
 						</div>
