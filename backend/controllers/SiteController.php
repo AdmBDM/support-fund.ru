@@ -14,91 +14,102 @@ use yii\web\Response;
  */
 class SiteController extends Controller
 {
-    /**
-     * {@inheritdoc}
-     */
-    public function behaviors()
-    {
-        return [
-            'access' => [
-                'class' => AccessControl::className(),
-                'rules' => [
-                    [
-                        'actions' => ['login', 'error'],
-                        'allow' => true,
-                    ],
-                    [
-                        'actions' => ['logout', 'index'],
-                        'allow' => true,
-                        'roles' => ['@'],
-                    ],
-                ],
-            ],
-            'verbs' => [
-                'class' => VerbFilter::className(),
-                'actions' => [
-                    'logout' => ['post'],
-                ],
-            ],
-        ];
-    }
+	/**
+	 * @return array[]
+	 */
+	public function behaviors(): array
+	{
+		return [
+			'access' => [
+				'class' => AccessControl::class,
+				'rules' => [
+					[
+						'actions' => ['login', 'error', 'create-user', 'params', 'session', ],
+						'allow' => true,
+					],
+					[
+						'actions' => ['logout', 'index', 'session',],
+						'allow' => true,
+						'roles' => ['@'],
+					],
+//					[
+//						'actions' => ['login', 'error'],
+//						'allow' => true,
+//					],
+//					[
+//						'actions' => ['logout', 'index'],
+//						'allow' => true,
+//						'roles' => ['@'],
+//					],
+				],
+			],
+			'verbs' => [
+				'class' => VerbFilter::class,
+				'actions' => [
+					'logout' => ['post'],
+//					'logout' => ['get'],
+				],
+			],
+		];
+	}
 
-    /**
-     * {@inheritdoc}
-     */
-    public function actions()
-    {
-        return [
-            'error' => [
-                'class' => 'yii\web\ErrorAction',
-            ],
-        ];
-    }
+	/**
+	 * @return string[][]
+	 */
+	public function actions(): array
+	{
+		return [
+			'error' => [
+				'class' => 'yii\web\ErrorAction',
+			],
+		];
+	}
 
-    /**
-     * Displays homepage.
-     *
-     * @return string
-     */
-    public function actionIndex()
-    {
-        return $this->render('index');
-    }
+	/**
+	 * Displays homepage.
+	 *
+	 * @return string
+	 */
+	public function actionIndex(): string
+	{
+		return $this->render('index');
+	}
 
-    /**
-     * Login action.
-     *
-     * @return string|Response
-     */
-    public function actionLogin()
-    {
-        if (!Yii::$app->user->isGuest) {
-            return $this->goHome();
-        }
+	/**
+	 * Login action.
+	 *
+	 * @return string|Response
+	 */
+	public function actionLogin()
+	{
+		if (!Yii::$app->user->isGuest) {
+			return $this->goHome();
+		}
 
-        $this->layout = 'blank';
+		$this->layout = 'blank';
 
-        $model = new LoginForm();
-        if ($model->load(Yii::$app->request->post()) && $model->login()) {
-            return $this->goBack();
-        }
+		$model = new LoginForm();
+		if ($model->load(Yii::$app->request->post()) && $model->login()) {
+			return $this->goBack();
+		}
 
-        $model->password = '';
+		$model->password = '';
 
-        return $this->render('login', [
-            'model' => $model,
-        ]);
-    }
+		return $this->render('login', [
+			'model' => $model,
+		]);
+	}
 
-    /**
-     * Logout action.
-     *
-     * @return Response
-     */
-    public function actionLogout()
-    {
-        Yii::$app->user->logout();
+	/**
+	 * Logout action.
+	 *
+	 * @return Response
+	 */
+	public function actionLogout(): Response
+	{
+		Yii::$app->user->logout();
 
-        return $this->goHome();
-    }
+		return $this->redirect('/admin');
+
+	}
 }

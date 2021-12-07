@@ -1,7 +1,9 @@
 <?php
 
 	/* @var $this yii\web\View */
+	/* @var $model ContactForm */
 
+	use frontend\models\ContactForm;
 	use yii\helpers\Html;
 
 	//$this->title = 'Фонд УЦК «Фонд поддержки»';
@@ -37,3 +39,13 @@
 </div>
 
 <?= $this->render('_about')?>
+
+<?= $this->render('_info')?>
+
+<?= $this->render('_open_data')?>
+
+<?= $this->render('_news')?>
+
+<?= $this->render('_contact', [
+		'model' => $model,
+])?>

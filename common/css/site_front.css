@@ -546,6 +546,10 @@ footer:before {
   font-weight: bolder;
   text-align: left;
 }
+.site-open_data .info-empty {
+  min-height: 75px;
+  margin: 75px;
+}
 
 .site-news {
   margin-bottom: 60px;
