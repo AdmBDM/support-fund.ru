@@ -2,7 +2,7 @@
 
 /* @var $this yii\web\View */
 
-use yii\helpers\Html;
+//use yii\helpers\Html;
 
 ?>
 
@@ -27,7 +27,7 @@ use yii\helpers\Html;
 			</tr>
 			<tr>
 				<td>Сокращенное фирменное наименование на русском языке</td>
-				<td>СФ УЦК «ФОНД ПОДДЕРЖКИ»</td>
+				<td>ФП</td>
 				<td>&nbsp;</td>
 				<td>&nbsp;</td>
 			</tr>
