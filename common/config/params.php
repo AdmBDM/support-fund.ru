@@ -10,5 +10,15 @@ return [
 	'cacheLoginTime' => 3600 * 24,			//кэш логина на сутки
 	'messages' => [
 		'throwNotFound' => 'Запрашиваемая страница отсутствует.',
+		'dataDel' => 'Вы действительно хотите удалить данные?',
 	],
+	'dir' => [
+		'files' => 'ukpfiles/',
+		'docs' => 'docs/',
+	],
+	'load_files' => 'png, jpg, pdf',
+	'max_load_files' => 5,
+	'checkPassword' => CHECK_FROM_UNAME,
+//	'checkPassword' => CHECK_FROM_SMS,
+//	'checkPassword' => CHECK_FROM_EMAIL,
 ];

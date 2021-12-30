@@ -44,7 +44,7 @@ class DocsGroup extends ActiveRecord
 	/**
 	 * Gets query for [[OpenDocs]].
 	 *
-	 * @return \yii\db\ActiveQuery
+	 * @return ActiveQuery
 	 */
 	public function getOpenDocs(): ActiveQuery
 	{

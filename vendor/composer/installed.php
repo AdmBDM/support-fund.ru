@@ -1,11 +1,11 @@
 <?php return array(
     'root' => array(
-        'pretty_version' => '1.0.0+no-version-set',
-        'version' => '1.0.0.0',
+        'pretty_version' => 'dev-master',
+        'version' => 'dev-master',
         'type' => 'project',
         'install_path' => __DIR__ . '/../../',
         'aliases' => array(),
-        'reference' => NULL,
+        'reference' => '55d8fb64719762ad5c82e043d645c735d9c13b9b',
         'name' => 'yiisoft/yii2-app-advanced',
         'dev' => true,
     ),
@@ -275,6 +275,17 @@
             'install_path' => __DIR__ . '/../kartik-v/yii2-widget-datetimepicker',
             'aliases' => array(),
             'reference' => '881985a5e482a4e37d1901c7857912ba5af3f298',
+            'dev_requirement' => false,
+        ),
+        'kartik-v/yii2-widget-select2' => array(
+            'pretty_version' => 'dev-master',
+            'version' => 'dev-master',
+            'type' => 'yii2-extension',
+            'install_path' => __DIR__ . '/../kartik-v/yii2-widget-select2',
+            'aliases' => array(
+                0 => '2.2.x-dev',
+            ),
+            'reference' => 'b3c74af0612d47928d64e04efaae242d7611dda2',
             'dev_requirement' => false,
         ),
         'myclabs/deep-copy' => array(
@@ -586,6 +597,15 @@
             'reference' => '99732be0ddb3361e16ad77b68ba41efc8e979019',
             'dev_requirement' => true,
         ),
+        'select2/select2' => array(
+            'pretty_version' => '4.0.13',
+            'version' => '4.0.13.0',
+            'type' => 'component',
+            'install_path' => __DIR__ . '/../select2/select2',
+            'aliases' => array(),
+            'reference' => '45f2b83ceed5231afa7b3d5b12b58ad335edd82e',
+            'dev_requirement' => false,
+        ),
         'swiftmailer/swiftmailer' => array(
             'pretty_version' => 'v6.3.0',
             'version' => '6.3.0.0',
@@ -758,12 +778,12 @@
             'dev_requirement' => false,
         ),
         'yiisoft/yii2-app-advanced' => array(
-            'pretty_version' => '1.0.0+no-version-set',
-            'version' => '1.0.0.0',
+            'pretty_version' => 'dev-master',
+            'version' => 'dev-master',
             'type' => 'project',
             'install_path' => __DIR__ . '/../../',
             'aliases' => array(),
-            'reference' => NULL,
+            'reference' => '55d8fb64719762ad5c82e043d645c735d9c13b9b',
             'dev_requirement' => false,
         ),
         'yiisoft/yii2-bootstrap' => array(

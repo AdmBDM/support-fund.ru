@@ -102,3 +102,19 @@ $(document).ready(function() {
 		}
 	});
 });
+
+$('#btn-generate-pswd').click(function () {
+	$.ajax({
+		"type": 'post',
+		"url": '../generate-pswd',
+		"data": {
+			'pswd': $('#pswd').val(),
+		},
+		"success": function (res) {
+			if (res.alert) $('#pswd_hash').val(res.pswd); else alert('Пароль не может быть пустым!');
+		},
+		"error": function (request, status, error) {
+			alert('Ошибка вышла!');
+		},
+	})
+});
