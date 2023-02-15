@@ -13,7 +13,8 @@ use yii\web\Response;
 /**
  * DocsGroupController implements the CRUD actions for DocsGroup model.
  */
-class DocsGroupController extends Controller
+//class DocsGroupController extends Controller
+class DocsGroupController extends MyController
 {
 	/**
 	 * @return array|\string[][]|\string[][][][]

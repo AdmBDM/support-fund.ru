@@ -41,7 +41,7 @@ return [
 		'urlManager' => [
 			'class' => 'yii\web\UrlManager',
 			'enablePrettyUrl' => true,
-			'showScriptName' => false,
+//			'showScriptName' => false,
 //	        'enableStrictParsing' => true,
 			'rules' => [
 				'<controller:\w+>/<id:\d+>' => '<controller>/view',

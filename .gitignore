@@ -45,3 +45,13 @@ backend/web/index-test.php
 backend/web/robots.txt
 /images/
 /common/css/sass/.sass-cache/
+/backend/web/assets/
+/frontend/web/assets/
+/backend/web/css/
+/backend/web/spfiles/
+/backend/web/images/
+/backend/web/js/
+/frontend/web/css/
+/frontend/web/spfiles/
+/frontend/web/images/
+/frontend/web/js/

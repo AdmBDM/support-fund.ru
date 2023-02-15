@@ -5,9 +5,13 @@ namespace common\models;
 //use Yii;
 use yii\db\ActiveQuery;
 use yii\db\ActiveRecord;
+use yii\web\UploadedFile;
 
 /**
  * This is the model class for table "open_docs".
+ *
+ * @var UploadedFile
+ * Здесь хранится экземпляр класса UploadedFile
  *
  * @property int $id
  * @property int $docs_group_id
@@ -15,13 +19,17 @@ use yii\db\ActiveRecord;
  * @property string $system_file_name
  * @property string $pub_date_start
  * @property string|null $pub_date_end
- *
- * @property int $curGr
+ * @property string $file_ext
+ * @property string $image
+ * @property integer $image_id
  *
  * @property DocsGroup $docsGroup
  */
 class OpenDocs extends ActiveRecord
 {
+
+	public $imageFile;
+
 	/**
 	 * @return string
 	 */

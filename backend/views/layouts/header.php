@@ -4,6 +4,8 @@ use yii\web\View;
 
 /* @var $this View */
 /* @var $content string */
+
+Yii::$app->name = 'Спец-фонд';
 ?>
 
 <header class="main-header">
@@ -24,7 +26,7 @@ use yii\web\View;
 				<li class="dropdown user user-menu">
 					<a href="#" class="dropdown-toggle" data-toggle="dropdown">
 						<img src="/images/no-image.png" class="user-image" alt="logo"/>
-						<span class="hidden-xs">Спец-фонд</span>
+						<span class="hidden-xs"><?= Yii::$app->user->identity->username ?></span>
 					</a>
 					<ul class="dropdown-menu">
 						<!-- User image -->

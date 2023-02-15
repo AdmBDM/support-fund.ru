@@ -1,5 +1,8 @@
 <?php
-$itemHead = [
+
+	use common\models\DocsGroup;
+
+	$itemHead = [
 	['label' => 'Меню (IDus-' . Yii::$app->user->identity->id . ')', 'options' => ['class' => 'header']],
 ];
 
@@ -13,6 +16,7 @@ $itemsAdmin = [
 			['label' => 'Debug', 'icon' => 'dashboard', 'url' => ['/debug']],
 		],
 	],
+	['label' => 'Пользователи', 'icon' => 'users', 'url' => '/admin/user',],
 ];
 
 $itemsExample = [
@@ -42,23 +46,27 @@ $itemsExample = [
 	],
 ];
 
-$itemsWork = [
-	['label' => 'Новости', 'icon' => 'newspaper', 'url' => '/admin/news',],
-];
+	$itemsWork = [['label' => 'Группы информации', 'icon' => 'sitemap', 'url' => ['/docs-group']]];
+	foreach (DocsGroup::find()->orderBy('id')->all() as $group) {
+		$itemsWork[] = [
+				'label' => $group['short_name_group'],
+				'icon' => 'file',
+				'url' => ['/open-docs/index?gr=' . $group['id']],
+		];
+	}
 
 $itemsDocs = [
 	[
 		'label' => 'Раскрытие',
-		'icon' => 'fa-route',
+		'icon' => 'comment',
 		'url' => '#',
-		'items' => [
-			['label' => 'Группы информации', 'icon' => 'sitemap', 'url' => ['/gii']],
-			['label' => 'Документы УК', 'icon' => 'file', 'url' => ['/gii']],
-			['label' => 'Собственные ср-ва', 'icon' => 'list-ul', 'url' => ['/gii']],
-			['label' => 'Финансы / Аудит', 'icon' => 'book', 'url' => ['/gii']],
-		],
+		'items' => $itemsWork
 	],
 ];
+
+	$itemsWork = [
+			['label' => 'Новости', 'icon' => 'inbox', 'url' => '/admin/news',],
+	];
 ?>
 
 <aside class="main-sidebar">

@@ -15,7 +15,7 @@ use yii\helpers\Html;
 		</div>
 		<div class="about-block-item">
 			<div class="about-text-items">
-				<div class="about-text-header">Фонд управления<br>целевым капиталом<br>«Фонд поддержки»</div>
+				<div class="about-text-header">Специализированный фонд<br>управления целевым капиталом<br>«Фонд поддержки»</div>
 
 				<div class="about-text-item" hidden>
 					<div class="info-item">

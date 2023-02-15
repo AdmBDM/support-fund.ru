@@ -2,9 +2,10 @@
 
 namespace backend\controllers;
 
-use common\models\OpenDocs;
+use common\models\User;
 use Throwable;
 use Yii;
+use yii\base\Exception;
 use yii\data\ActiveDataProvider;
 use yii\db\StaleObjectException;
 use yii\web\Controller;
@@ -13,10 +14,10 @@ use yii\filters\VerbFilter;
 use yii\web\Response;
 
 /**
- * OpenDocsController implements the CRUD actions for OpenDocs model.
+ * UserController implements the CRUD actions for User model.
  */
-//class OpenDocsController extends Controller
-class OpenDocsController extends MyController
+class UserController extends Controller
+//class UserController extends MyController
 {
 	/**
 	 * @return array
@@ -37,14 +38,13 @@ class OpenDocsController extends MyController
 	}
 
 	/**
-	 * Lists all OpenDocs models.
+	 * Lists all User models.
 	 * @return string
 	 */
 	public function actionIndex(): string
 	{
 		$dataProvider = new ActiveDataProvider([
-			'query' => OpenDocs::find()
-					->where('docs_group_id=' . Yii::$app->request->queryParams['gr']),
+			'query' => User::find(),
 			/*
 			'pagination' => [
 				'pageSize' => 50
@@ -59,13 +59,14 @@ class OpenDocsController extends MyController
 
 		return $this->render('index', [
 			'dataProvider' => $dataProvider,
-			'currentGroup' => Yii::$app->request->queryParams['gr'],
 		]);
 	}
 
 	/**
-	 * Displays a single OpenDocs model.
-	 * @param int $id ID
+	 * Displays a single User model.
+	 *
+	 * @param int $id
+	 *
 	 * @return string
 	 * @throws NotFoundHttpException
 	 */
@@ -73,18 +74,18 @@ class OpenDocsController extends MyController
 	{
 		return $this->render('view', [
 			'model' => $this->findModel($id),
-			'currentGroup' => Yii::$app->request->queryParams['gr'],
 		]);
 	}
 
 	/**
-	 * Creates a new OpenDocs model.
+	 * Creates a new User model.
 	 * If creation is successful, the browser will be redirected to the 'view' page.
+	 *
 	 * @return string|Response
 	 */
 	public function actionCreate()
 	{
-		$model = new OpenDocs();
+		$model = new User();
 
 		if ($this->request->isPost) {
 			if ($model->load($this->request->post()) && $model->save()) {
@@ -94,18 +95,17 @@ class OpenDocsController extends MyController
 			$model->loadDefaultValues();
 		}
 
-//		$model->docs_group_id = Yii::$app->request->queryParams['gr'];
-
 		return $this->render('create', [
 			'model' => $model,
-			'currentGroup' => Yii::$app->request->queryParams['gr'],
 		]);
 	}
 
 	/**
-	 * Updates an existing OpenDocs model.
+	 * Updates an existing User model.
 	 * If update is successful, the browser will be redirected to the 'view' page.
-	 * @param int $id ID
+	 *
+	 * @param int $id
+	 *
 	 * @return string|Response
 	 * @throws NotFoundHttpException
 	 */
@@ -113,26 +113,37 @@ class OpenDocsController extends MyController
 	{
 		$model = $this->findModel($id);
 
-		if ($this->request->isPost && $model->load($this->request->post()) && $model->save()) {
-			return $this->redirect(['view', 'id' => $model->id]);
-		}
+//		if ($this->request->isPost && $model->load($this->request->post()) && $model->save()) {
+		if ($this->request->isPost) {
+			$post = $this->request->post();
+			if ($model->load($this->request->post())) {
+				$model->password_hash = $post['User']['pswd_hash'] ?: $model->password_hash;
 
-//		$model->docs_group_id = Yii::$app->request->queryParams['gr'];
+				if ($model->save()) {
+					return $this->redirect(['view', 'id' => $model->id]);
+				} else {
+					Yii::$app->session->addFlash('error', 'Ошибка сохранения!!!');
+				}
+			} else {
+				Yii::$app->session->addFlash('error', 'Ошибка загрузки!!!');
+			}
+		}
 
 		return $this->render('update', [
 			'model' => $model,
-			'currentGroup' => Yii::$app->request->queryParams['gr'],
 		]);
 	}
 
 	/**
-	 * Deletes an existing OpenDocs model.
+	 * Deletes an existing User model.
 	 * If deletion is successful, the browser will be redirected to the 'index' page.
-	 * @param int $id ID
+	 *
+	 * @param int $id
+	 *
 	 * @return Response
+	 * @throws NotFoundHttpException
 	 * @throws Throwable
 	 * @throws StaleObjectException
-	 * @throws NotFoundHttpException
 	 */
 	public function actionDelete(int $id): Response
 	{
@@ -142,18 +153,50 @@ class OpenDocsController extends MyController
 	}
 
 	/**
-	 * Finds the OpenDocs model based on its primary key value.
+	 * Finds the User model based on its primary key value.
 	 * If the model is not found, a 404 HTTP exception will be thrown.
-	 * @param int $id ID
-	 * @return OpenDocs|null
+	 *
+	 * @param int $id
+	 *
+	 * @return User|null
 	 * @throws NotFoundHttpException
 	 */
 	protected function findModel(int $id)
 	{
-		if (($model = OpenDocs::findOne($id)) !== null) {
+		if (($model = User::findOne($id)) !== null) {
 			return $model;
 		}
 
 		throw new NotFoundHttpException(Yii::$app->params['messages']['throwNotFound']);
+	}
+
+	/**
+	 * Генерация парольного хэша.
+	 *
+	 * @return array
+	 * @throws Exception
+	 */
+	public function actionGeneratePswd(): array
+	{
+		$pswd = '---';
+
+		if (Yii::$app->request->isAjax) {
+
+			if (!$_POST['pswd']) {
+				$msg = '';
+			} else {
+				$msg = 'Пароль НЕ пустой!';
+				$pswd = Yii::$app->security->generatePasswordHash($_POST['pswd']);
+			}
+
+		} else {
+			$msg = "Какие-то неполадки обработки!!!";
+		}
+
+		Yii::$app->response->format = Response::FORMAT_JSON;
+		return [
+			'alert' => $msg,
+			'pswd' => $pswd,
+		];
 	}
 }
