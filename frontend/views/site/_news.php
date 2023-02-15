@@ -15,7 +15,7 @@ $itemsNews = News::find()
 		<img src="/images/logo-news.jpg" alt="">
 	</div>
 	<div class="content">
-		<h2>Новости ООО «УК «Проект»</h2>
+		<h2>Новости фонда</h2>
 		<div class="news-year">
 			<div class="news-year-content" id="news-2021">
 				<div class="year-val" id="year-2021">2021</div>
